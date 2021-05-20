@@ -146,17 +146,17 @@ if numel(chantype)>0
     sel = strcmp(noise.chantype, chantype{i});
     %noisecov(sel,~sel) = 0;
     %noisecov(~sel,sel) = 0;
-    invnoise(sel,sel) = ft_inv(noisecov(sel,sel), 'lambda', cfg.lambda, 'kappa', cfg.kappa, 'tolerance', cfg.tol, 'method', cfg.invmethod);
+    invnoise(sel,sel) = ft_inv(noisecov(sel,sel), 'lambda', cfg.lambda, 'kappa', cfg.kappa, 'tol', cfg.tol, 'method', cfg.invmethod);
     [U,S,V]           = svd(invnoise(sel,sel), 'econ');
     diagS             = diag(S)./numel(chantype);
     selS              = 1:rank(invnoise(sel,sel));
     tra(sel,sel)      = U(:,selS)*diag(sqrt(diagS(selS)))*U(:,selS)';
   end
-  %invnoise = ft_inv(noisecov, 'lambda', cfg.lambda, 'kappa', cfg.kappa, 'tolerance', cfg.tol, 'method', cfg.invmethod);
+  %invnoise = ft_inv(noisecov, 'lambda', cfg.lambda, 'kappa', cfg.kappa, 'tol', cfg.tol, 'method', cfg.invmethod);
 
 else
   % invert the noise covariance matrix
-  invnoise = ft_inv(noisecov, 'lambda', cfg.lambda, 'kappa', cfg.kappa, 'tolerance', cfg.tol, 'method', cfg.invmethod);
+  invnoise = ft_inv(noisecov, 'lambda', cfg.lambda, 'kappa', cfg.kappa, 'tol', cfg.tol, 'method', cfg.invmethod);
   [U,S,V]  = svd(invnoise,'econ');
   diagS    = diag(S);
   %sel     = diagS./diagS(1)>1e-12;

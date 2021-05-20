@@ -16,7 +16,7 @@ function Y = ft_inv(X, varargin)
 %               eigenvalue.
 %   kappa     = scalar integer, reflects the ordinal singular value at which
 %               the singular value spectrum will be truncated.
-%   tolerance = scalar, reflects the fraction of the largest singular value
+%   tol       = scalar, reflects the fraction of the largest singular value
 %               at which the singular value spectrum will be truncated.
 %               The default is 10*eps*max(size(X)).
 %   feedback  = boolean, to visualize the singular value spectrum with the 
@@ -73,7 +73,7 @@ function Y = ft_inv(X, varargin)
 %    along with FieldTrip. If not, see <http://www.gnu.org/licenses/>.
 
 method      = ft_getopt(varargin, 'method',    'lavrentiev');
-tolerance   = ft_getopt(varargin, 'tolerance', []);
+tolerance   = ft_getopt(varargin, 'tol', []);
 kappa       = ft_getopt(varargin, 'kappa',     []);
 lambda      = ft_getopt(varargin, 'lambda',    0);
 feedback    = istrue(ft_getopt(varargin, 'feedback', false));

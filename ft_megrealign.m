@@ -418,7 +418,7 @@ ft_postamble savevar    data
 function [realign, noalign, bkalign] = computeprojection(lfold, lfnew, tolerance, verify)
 
 % compute this inverse only once, although it is used twice
-tmp = ft_inv(lfold, 'method', 'tsvd', 'tolerance', tolerance);
+tmp = ft_inv(lfold, 'method', 'tsvd', 'tol', tolerance);
 % compute the three interpolation matrices
 ft_info('computing interpolation matrix #1\n');
 realign = lfnew * tmp;
@@ -426,7 +426,7 @@ if strcmp(verify, 'yes')
   ft_info('computing interpolation matrix #2\n');
   noalign = lfold * tmp;
   ft_info('computing interpolation matrix #3\n');
-  bkalign = (lfold * ft_inv(lfnew, 'method', 'tsvd', 'tolerance', tolerance)) * realign;
+  bkalign = (lfold * ft_inv(lfnew, 'method', 'tsvd', 'tol', tolerance)) * realign;
 else
   noalign = [];
   bkalign = [];

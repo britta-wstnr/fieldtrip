@@ -209,7 +209,7 @@ if strcmp(cfg.planarmethod, 'sourceproject')
   lfnew = ft_compute_leadfield(sourcemodel.pos, planar.grad, headmodel, leadfieldopt{:});
   
   % compute the interpolation matrix
-  transform = lfnew * ft_inv(lfold, 'method', 'tsvd', 'tolerance', cfg.tolerance);
+  transform = lfnew * ft_inv(lfold, 'method', 'tsvd', 'tol', cfg.tolerance);
   
   planarmontage = [];
   planarmontage.tra      = transform;

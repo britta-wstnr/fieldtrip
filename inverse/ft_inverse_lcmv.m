@@ -90,7 +90,7 @@ weightnorm     = ft_getopt(varargin, 'weightnorm',    'no');
 invopt = {};
 invopt = ft_setopt(invopt, 'lambda',    ft_getopt(varargin, 'lambda', 0));
 invopt = ft_setopt(invopt, 'kappa',     ft_getopt(varargin, 'kappa'));
-invopt = ft_setopt(invopt, 'tolerance', ft_getopt(varargin, 'tol'));
+invopt = ft_setopt(invopt, 'tol', ft_getopt(varargin, 'tol'));
 invopt = ft_setopt(invopt, 'method',    ft_getopt(varargin, 'invmethod'));
 
 % construct the low-level options for the leadfield computation as key-value pairs, these are passed to FT_COMPUTE_LEADFIELD
