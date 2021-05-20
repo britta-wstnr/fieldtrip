@@ -36,9 +36,9 @@ function [estimate] = ft_inverse_lcmv(sourcemodel, sens, headmodel, dat, C, vara
 %   'weight'          = number or Nx1 vector, weight for each dipole position to compensate for the size of the corresponding patch (default = 1)
 %
 % These options influence the mathematical inversion of the covariance matrix
-%  'lambda'           = regularisation parameter
-%  'kappa'            = parameter for covariance matrix inversion
-%  'tol'              = parameter for covariance matrix inversion
+%  'lambda'           = regularisation parameter, see FT_INV
+%  'kappa'            = parameter for covariance matrix inversion, see FT_INV
+%  'tol'              = parameter for covariance matrix inversion, see FT_INV
 %
 % If the dipole definition only specifies the dipole location, a rotating
 % dipole (regional source) is assumed on each location. If a dipole moment

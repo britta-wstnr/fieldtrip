@@ -87,9 +87,9 @@ function [source] = ft_sourceanalysis(cfg, data, baseline)
 %   cfg.channel       = Nx1 cell-array with selection of channels (default = 'all'), see FT_CHANNELSELECTION for details
 %   cfg.frequency     = single number (in Hz)
 %   cfg.latency       = single number in seconds, for time-frequency analysis
-%   cfg.lambda        = number or empty for automatic default
-%   cfg.kappa         = number or empty for automatic default
-%   cfg.tol           = number or empty for automatic default
+%   cfg.lambda        = number or empty for automatic default, see FT_INV
+%   cfg.kappa         = number or empty for automatic default, see FT_INV
+%   cfg.tol           = number or empty for automatic default, see FT_INV
 %   cfg.refchan       = reference channel label (for coherence)
 %   cfg.refdip        = reference dipole location (for coherence)
 %   cfg.supchan       = suppressed channel label(s)
